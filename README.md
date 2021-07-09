@@ -28,9 +28,9 @@ MENU
 
 4. Ao selecionar a opção 1, deverá ser mostrado na tela um calendário e selecionar uma data:
 #### Junho/2020 ####                
- D | S | T 
-:---: | :---: | :---:
-Valor | Valor | Valor
+ D | S | T | Q | Q | S | S 
+:---: | :---: | :---: | :--: | :---: | :---: | :---:
+      |       |   1   |   2  |   3   |   4   |   5
   
 ![sistema 4](https://user-images.githubusercontent.com/70827699/125009094-3bbe8a00-e03a-11eb-81bf-c76eeb811663.png)
 
