@@ -40,7 +40,7 @@ MENU
 
 5. Após selecionar uma data, será necessário selecionar um horário disponível (ao exemplo abaixo, foi selecionado o dia 15):
 
- DIA | 1-08:00 | 2-09:00 | 3-10:00 | 4-11:00 | 5-13:00 | 6-14:00 | 7-15:00 | 8:16:00 
+ DIA | 1-08:00 | 2-09:00 | 3-10:00 | 4-11:00 | 5-13:00 | 6-14:00 | 7-15:00 | 8-16:00 
 :---: | :---: | :---: | :--: | :---: | :---: | :---: | :---: | :---:
 15| X | X | | X | X | | X | X
 
