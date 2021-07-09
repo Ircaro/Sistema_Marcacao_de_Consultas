@@ -1,19 +1,20 @@
-#include <stdio.h> // Biblioteca padr„o
-#include <stdlib.h> // Biblioteca padr„o
+#include <stdio.h> // Biblioteca padr√£o
+#include <stdlib.h> // Biblioteca padr√£o
 #include <stdbool.h> // Biblioteca booleano 
-#include <locale.h> // Biblioteca para LÌngua Portuguesa 
+#include <locale.h> // Biblioteca para L√≠ngua Portuguesa 
 #include <string.h> // Biblioteca para receber string
+//Autores:  Adriele Figueredo  e  √çrcaro Thiago
 
-//Vari·veis globais
-int m, n, k; // Vari·veis usadas no for
-int dataConsulta, voltarMenu, selecaoHorarioMenu, horaMarcada, opcaoHora, marcacoes = 0, desmarcarData; //Vari·veis usadas nos procedimentos 
+//Vari√°veis globais
+int m, n, k; // Vari√°veis usadas no for
+int dataConsulta, voltarMenu, selecaoHorarioMenu, horaMarcada, opcaoHora, marcacoes = 0, desmarcarData; //Vari√°veis usadas nos procedimentos 
 char calendarioDiasSemana[7] = {'D', 'S', 'T', 'Q', 'Q', 'S', 'S'}; //Vetor de dias da semana 
-char nomePaciente[60], nomeDentista[60]; //Vari·veis usadas no main
-int  calendarioDias[5][7] = {0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 0, 0, 0}; //Matriz dias do mÍs de junho
-int descricaoHorarios[8] = {8, 9, 10, 11, 13, 14, 15, 16}; //Vetor dos hor·rios 
-bool fimDeSemana = false, selecaoMenu = true, selecaoMenuHorario = true, diaNaoDisponivel = true; //Vari·veis booleanas
-char topoHorarios[9] = {'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};//Vetor topo dos hor·rios
-int horarios[30][9] = { //Matriz dos dias e hor·rios
+char nomePaciente[60], nomeDentista[60]; //Vari√°veis usadas no main
+int  calendarioDias[5][7] = {0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 0, 0, 0}; //Matriz dias do m√™s de junho
+int descricaoHorarios[8] = {8, 9, 10, 11, 13, 14, 15, 16}; //Vetor dos hor√°rios 
+bool fimDeSemana = false, selecaoMenu = true, selecaoMenuHorario = true, diaNaoDisponivel = true; //Vari√°veis booleanas
+char topoHorarios[9] = {'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};//Vetor topo dos hor√°rios
+int horarios[30][9] = { //Matriz dos dias e hor√°rios
 1, 0, 1, 0, 1, 0, 1, 0, 1, 
 2, 1, 0, 0, 0, 1, 0, 0, 1,
 3, 0, 1, 1, 0, 1, 0, 1, 1,
@@ -44,32 +45,32 @@ int horarios[30][9] = { //Matriz dos dias e hor·rios
 28, 0, 0, 0, 1, 1, 0, 0, 0,
 29, 1, 0, 0, 0, 1, 0, 0, 1,
 30, 0, 1, 1, 1, 0, 1, 1, 0};
-char topoVisualizacao[4] = {'a', 'b', 'c', 'd'};//Vetor de visualizaÁ„o de consultas marcadas 
+char topoVisualizacao[4] = {'a', 'b', 'c', 'd'};//Vetor de visualiza√ß√£o de consultas marcadas 
 
-void selecaoHorario(){//Procedimentos para selecionar o hor·rio no Menu de hor·rios em marcarConsulta()
+void selecaoHorario(){//Procedimentos para selecionar o hor√°rio no Menu de hor√°rios em marcarConsulta()
 	setlocale(LC_ALL, "Portuguese");
 	system("cls");
-	printf("Prezado(a) %s, sua consulta foi marcada com sucesso no dia %2.2d ‡s %2.2dhrs com o(a) Dr.(a) %s.\n", nomePaciente, dataConsulta, horaMarcada, nomeDentista);
+	printf("Prezado(a) %s, sua consulta foi marcada com sucesso no dia %2.2d √†s %2.2dhrs com o(a) Dr.(a) %s.\n", nomePaciente, dataConsulta, horaMarcada, nomeDentista);
 	selecaoMenuHorario = false;	
 }
 
-void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
+void marcarConsulta(){ //Procedimentos para marca√ß√£o de consulta
 	setlocale(LC_ALL, "Portuguese");
 	selecaoMenuHorario = true;
 	
 	system("cls");
-	printf("############# MARCA«√O DE CONSULTA ############## \n \n");
+	printf("############# MARCA√á√ÉO DE CONSULTA ############## \n \n");
 	
-	printf("|               ### JUNHO/2021 ###               | \n"); //Matriz para a visualizaÁ„o da agenda do mÍs de junho
+	printf("|               ### JUNHO/2021 ###               | \n"); //Matriz para a visualiza√ß√£o da agenda do m√™s de junho
 	printf("|");
 	
-		for(m=0; m<7; m++){ //LaÁo de repetiÁ„o para mostar os elementos do Vetor 
+		for(m=0; m<7; m++){ //La√ßo de repeti√ß√£o para mostar os elementos do Vetor 
 			printf(" %2.c   |", calendarioDiasSemana[m]);
 		}
 	
 	printf("\n");
 	
-	for(m=0; m<5; m++){ //LaÁo de repetiÁ„o para mostar os elementos da Matriz
+	for(m=0; m<5; m++){ //La√ßo de repeti√ß√£o para mostar os elementos da Matriz
 		printf("|");
 		for(n=0; n<7; n++){
 			if (calendarioDias[m][n] == 0) {
@@ -87,19 +88,19 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 	fimDeSemana = false; 
 	printf("\n");
 	
-	while(fimDeSemana == false){ //Verificar se a data escolhida È maior que 30 ou se È um final de semana 
+	while(fimDeSemana == false){ //Verificar se a data escolhida √© maior que 30 ou se √© um final de semana 
 		fimDeSemana = true;
-			if(dataConsulta > 30){ //Verificar se a data escolhida È maior do que 30, nesse caso o fimDeSemana se torna falso repetindo a verificaÁ„o 
-				printf("Data inv·lida, por gentileza tente novamente: ");
+			if(dataConsulta > 30){ //Verificar se a data escolhida √© maior do que 30, nesse caso o fimDeSemana se torna falso repetindo a verifica√ß√£o 
+				printf("Data inv√°lida, por gentileza tente novamente: ");
 				scanf("%d", &dataConsulta);
 				printf("\n");
 				fimDeSemana = false;
 			} else {
-				for (m = 0; m < 5; m++) { //Verificar se a data escolhida est· nas colunas 0 e 6, domingo e s·bado respectivamente, nesse caso o fimDeSemana se torna falso repetindo a verificaÁ„o 
+				for (m = 0; m < 5; m++) { //Verificar se a data escolhida est√° nas colunas 0 e 6, domingo e s√°bado respectivamente, nesse caso o fimDeSemana se torna falso repetindo a verifica√ß√£o 
 					if (dataConsulta == calendarioDias[m][0] || dataConsulta == calendarioDias[m][6]){ 
 						fimDeSemana = false;
 							if(fimDeSemana == false){
-								printf("A data escolhida precisa ser em um dia ˙til, por gentileza tente novamente: ");
+								printf("A data escolhida precisa ser em um dia √∫til, por gentileza tente novamente: ");
 								scanf("%d", &dataConsulta);
 								printf("\n");
 							} 
@@ -111,11 +112,11 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 	
 	system("cls");
 	
-	printf("VocÍ selecionou a data: %2.2d \n \n", dataConsulta);//Caso n„o entre em nenhuma condiÁ„o acima mostrar· a data selecionada
-	printf("Selecione um hor·rio (Caso n„o tenha um hor·rio disponÌvel, selecione a opÁ„o 9 - CANCELAR): \n \n");
+	printf("Voc√™ selecionou a data: %2.2d \n \n", dataConsulta);//Caso n√£o entre em nenhuma condi√ß√£o acima mostrar√° a data selecionada
+	printf("Selecione um hor√°rio (Caso n√£o tenha um hor√°rio dispon√≠vel, selecione a op√ß√£o 9 - CANCELAR): \n \n");
 	printf("|");
-	for (m=0; m<9; m++) { //Mostrar um vetor do topo dos hor·rios
-		if (topoHorarios[m] == 'z') { //Substituindo as letras pelo conte˙do do printf
+	for (m=0; m<9; m++) { //Mostrar um vetor do topo dos hor√°rios
+		if (topoHorarios[m] == 'z') { //Substituindo as letras pelo conte√∫do do printf
 			printf("        |");
 		}
 		if (topoHorarios[m] == 'a') {
@@ -147,7 +148,7 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 	printf("\n");
 	
 	printf("|");
-	for (m=0; m<30; m++){ //LaÁo de repetiÁ„o para mostrar a data selecionada 
+	for (m=0; m<30; m++){ //La√ßo de repeti√ß√£o para mostrar a data selecionada 
 		for(n=0; n<9; n++){
 			if (dataConsulta == horarios[m][0]){
 				printf("   %2.2d   |", horarios[m][0]);
@@ -156,7 +157,7 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 		}
 	}
 	
-	for (k=0; k<8; k++) { //LaÁo de repetiÁ„o para mostrar os hor·rios disponÌveis
+	for (k=0; k<8; k++) { //La√ßo de repeti√ß√£o para mostrar os hor√°rios dispon√≠veis
 			if(horarios[dataConsulta-1][k+1] == 1 || horarios[dataConsulta-1][k+1] == 2) {
 				printf("   X    |"); //Substituir o 1 ou 2 pelo conteudo do printf 
 			} else if (horarios[dataConsulta-1][k+1] == 0){
@@ -166,9 +167,9 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 	
 	printf("\n");
 	
-	while(selecaoMenuHorario == true){ //Mostrar as opÁıes para o paciente selecionar 
+	while(selecaoMenuHorario == true){ //Mostrar as op√ß√µes para o paciente selecionar 
 		
-		printf("\nSelecione uma opÁ„o de hor·rio disponÌvel: \n");
+		printf("\nSelecione uma op√ß√£o de hor√°rio dispon√≠vel: \n");
 		printf("1 - 08h \n");
 		printf("2 - 09h \n");
 		printf("3 - 10h \n");
@@ -178,16 +179,16 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 		printf("7 - 15h \n");
 		printf("8 - 16h \n");
 		printf("9 - CANCELAR \n");
-		printf("O hor·rio selecionado ser·: ");
+		printf("O hor√°rio selecionado ser√°: ");
 		scanf("%d", &selecaoHorarioMenu);
 		
-		while (horarios[dataConsulta-1][selecaoHorarioMenu] == 1 || horarios[dataConsulta-1][selecaoHorarioMenu] == 2){//Verificar se a opÁ„o selecionada È v·lida 
+		while (horarios[dataConsulta-1][selecaoHorarioMenu] == 1 || horarios[dataConsulta-1][selecaoHorarioMenu] == 2){//Verificar se a op√ß√£o selecionada √© v√°lida 
 			printf("\n");
-			printf("Esse hor·rio n„o est· disponÌvel, por gentileza verifique se h· outro hor·rio disponÌvel e selecione novamente: ");
+			printf("Esse hor√°rio n√£o est√° dispon√≠vel, por gentileza verifique se h√° outro hor√°rio dispon√≠vel e selecione novamente: ");
 			scanf("%d", &selecaoHorarioMenu);
 		}
 		
-		horaMarcada = descricaoHorarios[selecaoHorarioMenu - 1]; //Armazenar o hor·rio selecionado na vari·vel
+		horaMarcada = descricaoHorarios[selecaoHorarioMenu - 1]; //Armazenar o hor√°rio selecionado na vari√°vel
 		
 		switch(selecaoHorarioMenu){ //Imprimir a mensagem de que a consulta foi marcada com sucesso
 			
@@ -228,12 +229,12 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 			break;
 			
 			default:
-				printf("OpÁ„o inv·lida! Tente novamente. \n");				
+				printf("Op√ß√£o inv√°lida! Tente novamente. \n");				
 			break;
 		}	
 	}
 	
-	horarios[dataConsulta-1][selecaoHorarioMenu] = 2; //Armazenar o hor·rio e a data selecionados pelo paciente na matriz hor·rios 
+	horarios[dataConsulta-1][selecaoHorarioMenu] = 2; //Armazenar o hor√°rio e a data selecionados pelo paciente na matriz hor√°rios 
 
 //Menu final							
 	printf("\nO que deseja fazer agora? \n");
@@ -241,9 +242,9 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 	printf("2 - Finalizar o atendimento \n");
 	scanf("%d", &voltarMenu); 
 	
-	while(voltarMenu != 1 && voltarMenu != 2){ //Verificar se a opÁ„o È v·lida 
+	while(voltarMenu != 1 && voltarMenu != 2){ //Verificar se a op√ß√£o √© v√°lida 
 		system("cls");
-		printf("VocÍ nao selecionou um n˙mero v·lido, por gentileza tente novamente \n \n");
+		printf("Voc√™ nao selecionou um n√∫mero v√°lido, por gentileza tente novamente \n \n");
 		printf("1 - Voltar ao Menu \n");
 		printf("2 - Finalizar o atendimento \n");
 		scanf("%d", &voltarMenu);		
@@ -252,11 +253,11 @@ void marcarConsulta(){ //Procedimentos para marcaÁ„o de consulta
 	if(voltarMenu == 2 ){ //Finaliza atendimento
 		selecaoMenu = false;
 		system("cls");
-		printf("Atendimento finalizado! Obrigado pela preferÍncia.");
+		printf("Atendimento finalizado! Obrigado pela prefer√™ncia.");
 	}
 }
 
-void visualizarConsulta(){//Procedimentos para a visualizaÁ„o de consultas
+void visualizarConsulta(){//Procedimentos para a visualiza√ß√£o de consultas
 	setlocale(LC_ALL, "Portuguese");
 	selecaoMenuHorario = true;
 	
@@ -264,7 +265,7 @@ void visualizarConsulta(){//Procedimentos para a visualizaÁ„o de consultas
 	printf("|                                        ### CONSULTAS MARCADAS ###                                      |\n");
 	
 	for (m=0; m<4; m++) { //Mostrar o topo das consultas marcadas 
-		if(topoVisualizacao[m] == 'a') { //Substituindo as letras pelo conte˙do do printf
+		if(topoVisualizacao[m] == 'a') { //Substituindo as letras pelo conte√∫do do printf
 			printf("|                     Paciente                     |");
 		}
 		if(topoVisualizacao[m] == 'b') {
@@ -286,7 +287,7 @@ void visualizarConsulta(){//Procedimentos para a visualizaÁ„o de consultas
 				printf("   %-26.26s   |", nomeDentista);
 				printf("   %2.2d    |", m+1);
 					if (n == 0 ) {
-						printf("   08hrs  |"); //Substituindo os valores de n pelo conte˙do do printf
+						printf("   08hrs  |"); //Substituindo os valores de n pelo conte√∫do do printf
 					}
 					if (n == 1 ) {
 						printf("   09hrs  |");
@@ -322,7 +323,7 @@ void visualizarConsulta(){//Procedimentos para a visualizaÁ„o de consultas
 	
 	while(voltarMenu != 1 && voltarMenu != 2){
 		system("cls");
-		printf("VocÍ nao selecionou um n˙mero v·lido, por gentileza tente novamente \n \n");
+		printf("Voc√™ nao selecionou um n√∫mero v√°lido, por gentileza tente novamente \n \n");
 		printf("1 - Voltar ao Menu \n");
 		printf("2 - Finalizar o atendimento \n");
 		scanf("%d", &voltarMenu);		
@@ -331,12 +332,12 @@ void visualizarConsulta(){//Procedimentos para a visualizaÁ„o de consultas
 	if(voltarMenu == 2 ){
 		selecaoMenu = false;
 		system("cls");
-		printf("Atendimento finalizado! Obrigado pela preferÍncia.");
+		printf("Atendimento finalizado! Obrigado pela prefer√™ncia.");
 	}
 
 }
 
-void desmarcarConsulta(){ //Procedimentos para a desmarcaÁ„o de consultas
+void desmarcarConsulta(){ //Procedimentos para a desmarca√ß√£o de consultas
 	setlocale(LC_ALL, "Portuguese");
 	selecaoMenuHorario = true;
 	system("cls");
@@ -349,8 +350,8 @@ void desmarcarConsulta(){ //Procedimentos para a desmarcaÁ„o de consultas
 		}
 	}
 	
-	if (marcacoes == 0) { //Verificar se n„o h· consultas marcadas  
-		printf("Prezado(a) %s, n„o h· consultas marcadas em seu nome.", nomePaciente);
+	if (marcacoes == 0) { //Verificar se n√£o h√° consultas marcadas  
+		printf("Prezado(a) %s, n√£o h√° consultas marcadas em seu nome.", nomePaciente);
 	} else {
 		printf("|                                        ### CONSULTAS MARCADAS ###                                      |\n\n");
 		marcacoes = 0;
@@ -360,7 +361,7 @@ void desmarcarConsulta(){ //Procedimentos para a desmarcaÁ„o de consultas
 					marcacoes++;
 					printf("%d - %s - %2.2d/06 - ", marcacoes, nomeDentista, m+1);
 					if (n == 0 ) {
-							printf("08hrs\n"); //Substituindo os valores de n pelo conte˙do do printf
+							printf("08hrs\n"); //Substituindo os valores de n pelo conte√∫do do printf
 						}
 						if (n == 1 ) {
 							printf("09hrs\n");
@@ -390,12 +391,12 @@ void desmarcarConsulta(){ //Procedimentos para a desmarcaÁ„o de consultas
 		printf("\n\nQual consulta deseja desmarcar?\n");
 		scanf("%d", &desmarcarData);
 		
-		while (desmarcarData > marcacoes) { //Verifica se a opÁ„o selecionada È v·lida 
-			printf("OpÁ„o inv·lida. Por gentileza informe uma opÁ„o que esteja disponÌvel para desmarcar sua consulta:\n");
+		while (desmarcarData > marcacoes) { //Verifica se a op√ß√£o selecionada √© v√°lida 
+			printf("Op√ß√£o inv√°lida. Por gentileza informe uma op√ß√£o que esteja dispon√≠vel para desmarcar sua consulta:\n");
 			scanf("%d", &desmarcarData);
 		}
 		marcacoes=0;
-		for (m=0; m<30; m++) { //Conta as consultas e substitui a opÁ„o selecionada pelo usu·rio disponibilizando o hor·rio
+		for (m=0; m<30; m++) { //Conta as consultas e substitui a op√ß√£o selecionada pelo usu√°rio disponibilizando o hor√°rio
 			for (n=0; n<8; n++) {
 				if (horarios[m][n+1] == 2){
 					marcacoes++;
@@ -416,7 +417,7 @@ void desmarcarConsulta(){ //Procedimentos para a desmarcaÁ„o de consultas
 	
 	while(voltarMenu != 1 && voltarMenu != 2){
 		system("cls");
-		printf("VocÍ nao selecionou um n˙mero v·lido, por gentileza tente novamente \n \n");
+		printf("Voc√™ nao selecionou um n√∫mero v√°lido, por gentileza tente novamente \n \n");
 		printf("1 - Voltar ao Menu \n");
 		printf("2 - Finalizar o atendimento \n");
 		scanf("%d", &voltarMenu);		
@@ -425,48 +426,48 @@ void desmarcarConsulta(){ //Procedimentos para a desmarcaÁ„o de consultas
 	if(voltarMenu == 2 ){
 		selecaoMenu = false;
 		system("cls");
-		printf("Atendimento finalizado! Obrigado pela preferÍncia.");
+		printf("Atendimento finalizado! Obrigado pela prefer√™ncia.");
 	}
 }
 
-main(void){//FunÁ„o principal 
-	char dataNascimento[10], cpf[11];//Vari·veis para colher dados do paciente  
-	int i, j; //Vari·veis do for 
-	int opcaoDentista, menuSelect, tamCPF;//Vari·veis diversas 
-	setlocale(LC_ALL, "Portuguese");//AcentuaÁ„o
+main(void){//Fun√ß√£o principal 
+	char dataNascimento[10], cpf[11];//Vari√°veis para colher dados do paciente  
+	int i, j; //Vari√°veis do for 
+	int opcaoDentista, menuSelect, tamCPF;//Vari√°veis diversas 
+	setlocale(LC_ALL, "Portuguese");//Acentua√ß√£o
 		
 
 // Coleta de dados do paciente 
 
-	printf("########## SISTEMA DE MARCA«’ES ########## \n\n");
+	printf("########## SISTEMA DE MARCA√á√ïES ########## \n\n");
 
-	printf("Informe seu nome completo (sem acentuaÁ„o): \n");
-	gets(nomePaciente);//Armazenar string com espaÁos
+	printf("Informe seu nome completo (sem acentua√ß√£o): \n");
+	gets(nomePaciente);//Armazenar string com espa√ßos
 
-	printf("Informe o seu CPF (sem pontos ou traÁos): \n");
-	scanf("%s", &cpf); //Vari·vel cpf declarada como char
+	printf("Informe o seu CPF (sem pontos ou tra√ßos): \n");
+	scanf("%s", &cpf); //Vari√°vel cpf declarada como char
 	
 	while(strlen(cpf) != 11) { //Verificar o tamanho do cpf 
-		printf("CPF inv·lido! Por gentileza, informe o seu CPF novamente (sem pontos ou traÁos): \n");
+		printf("CPF inv√°lido! Por gentileza, informe o seu CPF novamente (sem pontos ou tra√ßos): \n");
 		scanf("%s", &cpf);
 	}
 		
 	printf("Informe sua data de nascimento (no formato DD/MM/AAAA): \n");
-	scanf("%s", &dataNascimento);  //Vari·vel data declarada como char
+	scanf("%s", &dataNascimento);  //Vari√°vel data declarada como char
 	
-	while(strlen(dataNascimento) != 10 && dataNascimento[3] != '/' && dataNascimento[6] != '/') { // VerificaÁ„o do tamanho e do formato da data
-		printf("Data inv·lida! Por gentileza, informe a sua data de nascimento novamente (no formato DD/MM/AAAA): \n");
+	while(strlen(dataNascimento) != 10 && dataNascimento[3] != '/' && dataNascimento[6] != '/') { // Verifica√ß√£o do tamanho e do formato da data
+		printf("Data inv√°lida! Por gentileza, informe a sua data de nascimento novamente (no formato DD/MM/AAAA): \n");
 		scanf("%s", &dataNascimento);
 	}
 	
 	printf("\n");
 	system("cls");
 	
-// ApresentaÁ„o dos dados do paciente 
+// Apresenta√ß√£o dos dados do paciente 
 
 	printf("O nome armazenado foi: %s \n", nomePaciente);
 	printf("O CPF armazenado foi: "); 
-		for(i = 0; i<11; i++){ //Para acrescentar os pontos e espaÁos e mostrar o CPF inteiro 
+		for(i = 0; i<11; i++){ //Para acrescentar os pontos e espa√ßos e mostrar o CPF inteiro 
 			printf("%c", cpf[i]);
 			if (i == 2){
 				printf(".");
@@ -483,20 +484,20 @@ main(void){//FunÁ„o principal
 	
 // Escolha do profissional dentista
 
-	printf("########## SELE«√O DE PROFISSIONAL ########## \n \n");
-	printf("Por gentileza, selecione o n˙mero correspondente ao dentista que deseja atendimento: \n\n"); 
-	printf("1 - ARTHUR FILGUEIRAS ASSUN«√O \n");
+	printf("########## SELE√á√ÉO DE PROFISSIONAL ########## \n \n");
+	printf("Por gentileza, selecione o n√∫mero correspondente ao dentista que deseja atendimento: \n\n"); 
+	printf("1 - ARTHUR FILGUEIRAS ASSUN√á√ÉO \n");
 	printf("2 - DANIELLE VASCONCELOS MELLO \n\n");
-	printf("A opÁ„o escolhida ser·: ");
+	printf("A op√ß√£o escolhida ser√°: ");
 	scanf("%d", &opcaoDentista);
 	printf("\n");
 	
-	while(opcaoDentista != 1 && opcaoDentista != 2){ //Verificar se a opÁ„o digitada est· correta 
+	while(opcaoDentista != 1 && opcaoDentista != 2){ //Verificar se a op√ß√£o digitada est√° correta 
 		system("cls");
-		printf("VocÍ n„o selecionou um n˙mero v·lido, por gentileza tente novamente \n \n");
-		printf("1 - ARTHUR FILGUEIRAS ASSUN«√O \n");
+		printf("Voc√™ n√£o selecionou um n√∫mero v√°lido, por gentileza tente novamente \n \n");
+		printf("1 - ARTHUR FILGUEIRAS ASSUN√á√ÉO \n");
 		printf("2 - DANIELLE VASCONCELOS MELLO \n");
-		printf("A opÁ„o escolhida ser·: ");
+		printf("A op√ß√£o escolhida ser√°: ");
 		scanf("%d", &opcaoDentista);
 		printf("\n");
 	}
@@ -504,17 +505,17 @@ main(void){//FunÁ„o principal
 	system("cls");
 		
 	if (opcaoDentista == 1){
-		strcpy(nomeDentista, "Arthur Filgueiras AssunÁ„o"); //Armazenar uma string em uma vari·vel 
+		strcpy(nomeDentista, "Arthur Filgueiras Assun√ß√£o"); //Armazenar uma string em uma vari√°vel 
 	} else if(opcaoDentista == 2){
-		strcpy(nomeDentista, "Danielle Vasconcelos Mello"); //Armazenar uma string em uma vari·vel
+		strcpy(nomeDentista, "Danielle Vasconcelos Mello"); //Armazenar uma string em uma vari√°vel
 	}
 	
 
-// ApresentaÁ„o do menu
-	while (selecaoMenu == true) { //Verificar a opÁ„o selecionar menu est· verdadeira para retornar ao menu, caso contrario finaliza o sistema
+// Apresenta√ß√£o do menu
+	while (selecaoMenu == true) { //Verificar a op√ß√£o selecionar menu est√° verdadeira para retornar ao menu, caso contrario finaliza o sistema
 		
 		system("cls");
-		printf("O atendimento ser· com o(a) dentista: %s \n", nomeDentista);
+		printf("O atendimento ser√° com o(a) dentista: %s \n", nomeDentista);
 		printf("\n");
 		printf ("##########  MENU  ######### \n");
 		printf ("1 - MARCAR CONSULTA \n");
@@ -539,12 +540,12 @@ main(void){//FunÁ„o principal
 				
 				case 4:
 					system("cls");
-					printf("Atendimento finalizado! Obrigado pela preferÍncia.");
+					printf("Atendimento finalizado! Obrigado pela prefer√™ncia.");
 					selecaoMenu = false;
 				break;
 				
 				default:
-					printf("OpÁ„o inv·lida, atendimento finalizado!");
+					printf("Op√ß√£o inv√°lida, atendimento finalizado!");
 					selecaoMenu = false;
 				break;	
 			}
