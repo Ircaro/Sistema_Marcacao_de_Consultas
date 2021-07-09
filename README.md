@@ -63,7 +63,9 @@ O sistema deverá perguntar ao usuário se deseja “Voltar ao menu"  ou “Fina
 O sistema deverá perguntar ao usuário se deseja “Voltar ao menu” ou “Finalizar o atendimento”.
 
 8. Ao selecionar a opção 3, deverá escolher a consulta que deseja desmarcar.
+ 
 	1 - Arthur Filgueiras Assunção - 15/06 - 11hrs
+	
 	2 - Arthur Filgueiras Assunção - 17/06 - 16hrs
 
 ![sistema 8](https://user-images.githubusercontent.com/70827699/125010728-7e359600-e03d-11eb-80ec-eeca06e4d211.png)
