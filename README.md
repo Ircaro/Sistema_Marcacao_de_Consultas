@@ -13,18 +13,21 @@ _O sistema tem como finalidade marcar consultas em um consultório de atendiment
 ![sistema 2](https://user-images.githubusercontent.com/70827699/125008597-2d23a300-e039-11eb-945a-9bbf1e8b15bc.png)
 
 3. Mostrar menu com as seguintes informações:
-### MENU ###
+MENU 
 1 - Marcar consulta
+
 2 - Visualizar consultas marcadas
+
 3 - Desmarcar consulta
+
 4 - Finalizar o atendimento
 
 ![sistema 3](https://user-images.githubusercontent.com/70827699/125008656-56443380-e039-11eb-8631-1660964fa522.png)
 
 4. Ao selecionar a opção 1, deverá ser mostrado na tela um calendário e selecionar uma data:
-|           Junho/2020                |
+           #### Junho/2020 ####                
   D  |  S  |  T  |  Q  |  Q  |  S  |  S
- --- | --- | --- | --- | --- | --- | --- 
+ :---: | :---: | :---: | :---: | :---: | :---: | :---: 
      |     |  1  |  2  |  3  |  4  |  5  
   6  |  7  |  8  |  9  |  10 |  11 |  12
   13 |  14 |  15 |  16 |  17 |  18 |  19
