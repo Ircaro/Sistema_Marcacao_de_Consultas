@@ -28,8 +28,8 @@ MENU
 
 4. Ao selecionar a opção 1, deverá ser mostrado na tela um calendário e selecionar uma data:
 #### Junho/2020 ####                
-Alinhado a esquerda | Centralizado | Alinhado a direita
-:--------- | :------: | -------:
+ D | S | T 
+:---: | :---: | :---:
 Valor | Valor | Valor
   
 ![sistema 4](https://user-images.githubusercontent.com/70827699/125009094-3bbe8a00-e03a-11eb-81bf-c76eeb811663.png)
