@@ -1,4 +1,4 @@
-# Sistema de Marcação de Consultas
+# Sistema de Marcação de Consultas em C
 
 _O sistema tem como finalidade marcar consultas em um consultório de atendimento odontológico. Teremos dois especialistas: o Dr. Arthur Filgueiras Assunção e a Dra. Danielle Vasconcelos Mello. O usuário irá informar seus dados e poderá visualizar o calendário com os dias e horários disponíveis para o atendimento de cada dentista e efetuar a marcação, além disso, será capaz de visualizar as suas consultas que já foram marcadas. Caso não possa comparecer poderá desmarcar o atendimento._
 
