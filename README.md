@@ -43,6 +43,40 @@ MENU
  DIA | 1-08:00 | 2-09:00 | 3-10:00 | 4-11:00 | 5-13:00 | 6-14:00 | 7-15:00 | 8:16:00 
 :---: | :---: | :---: | :--: | :---: | :---: | :---: | :---: | :---:
 15| X | X | | X | X | | X | X
+
+![sistema 5](https://user-images.githubusercontent.com/70827699/125010205-72959f80-e03c-11eb-9b35-52e1ac89e204.png)
+
+6. Após selecionar o horário deverá apresentar a seguinte mensagem:
+_“Prezado paciente nomePaciente sua consulta foi marcada com sucesso, no diaMarcado às horarioMarcado com o Dr(a) nomeDentista.”. 
+O sistema deverá perguntar ao usuário se deseja “Voltar ao menu"  ou “Finalizar o atendimento”._
+
+![sistema 6](https://user-images.githubusercontent.com/70827699/125010370-c1dbd000-e03c-11eb-99e4-b1afd7af148d.png)
+
+7. Ao selecionar a opção 2, deverá aparecer na tela as consultas marcadas:
+#### Consultas Marcadas ####                
+ Paciente | Dentista | Dia | Horario 
+:---: | :---: | :---: | :--: 
+ Ircaro Thiago Souza Seixas | Arthur Filgueiras Assuncao | 15 | 10hrs
+ 
+![sistema 7](https://user-images.githubusercontent.com/70827699/125010650-4fb7bb00-e03d-11eb-97c7-8fc0b12dbcf0.png)
+
+O sistema deverá perguntar ao usuário se deseja “Voltar ao menu” ou “Finalizar o atendimento”.
+
+8. Ao selecionar a opção 3, deverá escolher a consulta que deseja desmarcar.
+	1 - Arthur Filgueiras Assunção - 15/06 - 11hrs
+	2 - Arthur Filgueiras Assunção - 17/06 - 16hrs
+
+![sistema 8](https://user-images.githubusercontent.com/70827699/125010728-7e359600-e03d-11eb-80ec-eeca06e4d211.png)
+
+Após selecionar a opção no qual deseja desmarcar a consulta, irá aparecer a mensagem de que a consulta foi desmarcada, deixando o horário disponível novamente. O sistema deverá perguntar ao usuário se ele deseja “Voltar ao menu” ou “Finalizar o atendimento”.
+
+![sistema 9](https://user-images.githubusercontent.com/70827699/125010833-ad4c0780-e03d-11eb-86cc-c7a2161c0b50.png)
+
+9. Ao selecionar a opção 4 o sistema deverá ser encerrado.
+
+![sistema 10](https://user-images.githubusercontent.com/70827699/125010901-d1a7e400-e03d-11eb-9e53-41c322069661.png)
+
+
   
   
   
